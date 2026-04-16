@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090909;
+            --surface: rgba(255, 255, 255, 0.06);
+            --text: #f5f5f7;
+            --muted: #a1a1aa;
+            --accent-start: #6ee7b7;
+            --accent-end: #34d399;
+            --radius: 20px;
+            --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+            --padding: 32px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, rgba(110, 231, 183, 0.12), transparent 25%),
+                        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.12), transparent 20%),
+                        var(--bg);
+            color: var(--text);
+        }
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .topbar a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .policy-card {
+            background: var(--surface);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: var(--padding);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+        }
+        .policy-card h1 {
+            margin-bottom: 16px;
+            font-size: 40px;
+        }
+        .policy-card p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+        .policy-card h2 {
+            margin-top: 28px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .accent-bar {
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+            width: 140px;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="topbar">
+            <a href="index.html">← Back to Portfolio</a>
+            <span>Privacy Policy</span>
+        </div>
+        <div class="policy-card">
+            <div class="accent-bar"></div>
+            <h1>Privacy Policy</h1>
+            <p>Thank you for visiting the Randomizer portfolio. Protecting your privacy is important, and this page explains how data is handled when you browse or interact with the site.</p>
+            <h2>Information Collection</h2>
+            <p>This portfolio does not collect personal information unless you voluntarily provide it through the contact form. No analytics, tracking, or cookies are used beyond basic browser behavior.</p>
+            <h2>Contact Form</h2>
+            <p>If you send a message through the contact form, the information you provide (email address and message) is only used to reply to your inquiry. It is not shared with third parties.</p>
+            <h2>Data Security</h2>
+            <p>The site uses secure HTTPS connections to transmit data. Any personal information submitted through the form is handled with care and only retained as needed to respond to your request.</p>
+            <h2>Changes to this Policy</h2>
+            <p>This privacy policy may be updated over time. If changes are made, the updated date will be reflected on this page.</p>
+        </div>
+    </div>
+</body>
+</html>
