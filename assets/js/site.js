@@ -1,9 +1,14 @@
+let previousActiveButton = null;
+
 function setActiveNav(button) {
     document.querySelectorAll('.nav-btn, .nav-link').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
 }
 
 function openModal(type) {
+    // Store the currently active button before changing it
+    previousActiveButton = document.querySelector('.nav-btn.active, .nav-link.active');
+    
     document.getElementById(type + '-modal').style.display = 'flex';
     const contactBtn = document.querySelector('.nav-btn[onclick*="Contact"]') || 
                        [...document.querySelectorAll('.nav-btn')].find(btn => btn.textContent.includes('Contact'));
@@ -12,6 +17,12 @@ function openModal(type) {
 
 function closeModal(type) {
     document.getElementById(type + '-modal').style.display = 'none';
+    
+    // Restore the previous active button if it exists
+    if (previousActiveButton) {
+        setActiveNav(previousActiveButton);
+        previousActiveButton = null;
+    }
 }
 
 function scrollToSection(id) {
@@ -35,6 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
+        closeModal('contact'); // Use closeModal to properly restore active state
     }
 });
