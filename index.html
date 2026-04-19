@@ -25,15 +25,15 @@
                 </svg>
             </div>
             <nav class="nav">
-                <button class="nav-btn" onclick="scrollToSection('apps')">
+                <button class="nav-btn active" onclick="scrollToSection('apps'); setActiveNav(this);">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                     Apps
                 </button>
-                <a class="nav-link" href="pages/privacy-policy.html">
+                <a class="nav-link" href="pages/privacy-policy.html" onclick="setActiveNav(this);">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                     Privacy Policy
                 </a>
-                <button class="nav-btn" onclick="openModal('contact')">
+                <button class="nav-btn" onclick="openModal('contact'); setActiveNav(this);">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     Contact
                 </button>
@@ -43,22 +43,19 @@
         <main class="main" id="apps">
             <div class="app-info">
                 <h1 class="app-title">Randomizer</h1>
-                <p class="app-description">A curious indie iOS app made for decisions, playful experiments, and small moments of surprise. I build apps that I find interesting first; if you enjoy them too, I’m happy to keep creating new and meaningful experiences.</p>
                 <a href="https://apps.apple.com/app/idXXXXXXXXX" class="cta-button" target="_blank">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     Download on App Store
                 </a>
+                    <p class="screenshot-label">A curious iOS app made for decisions, playful experiments, and small moments of surprise. Perfect for decisions, games, or just having fun.</p>
                 <div class="screenshots">
                     <div class="screenshot-card">
-                        <p class="screenshot-label">Daily dashboard showing active goals and progress.</p>
                         <div class="screenshot"><img src="assets/images/randomizer-screenshot1.png" alt="Dashboard screenshot"></div>
                     </div>
                     <div class="screenshot-card">
-                        <p class="screenshot-label">Simple task list with quick entry and status controls.</p>
                         <div class="screenshot"><img src="assets/images/randomizer-screenshot2.png" alt="Task list screenshot"></div>
                     </div>
                     <div class="screenshot-card">
-                        <p class="screenshot-label">Calendar view for tracking habits, wins, and streaks.</p>
                         <div class="screenshot"><img src="assets/images/randomizer-screenshot3.png" alt="Calendar screenshot"></div>
                     </div>
                 </div>

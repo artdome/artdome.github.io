@@ -10,13 +10,37 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <div class="page">
-        <div class="topbar">
-            <a href="../index.html">← Back to Portfolio</a>
-            <span>Privacy Policy</span>
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#6ee7b7"/>
+                        <stop offset="100%" style="stop-color:#34d399"/>
+                    </linearGradient>
+                </defs>
+                <path d="M15 45 L30 10 L45 45 L37.5 45 L35 37.5 L25 37.5 L22.5 45 Z M27.5 32.5 L32.5 32.5 L30 25 Z" fill="url(#logoGradient)"/>
+                <path d="M30 50 Q45 50 45 35 L45 20 Q45 5 30 5 Q15 5 15 20 L15 35 Q15 50 30 50 Z" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
+            </svg>
         </div>
+        <nav class="nav">
+            <button class="nav-btn" onclick="scrollToSection('apps'); setActiveNav(this);">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                Apps
+            </button>
+            <a class="nav-link active" href="privacy-policy.html" onclick="setActiveNav(this);">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                Privacy Policy
+            </a>
+            <button class="nav-btn" onclick="openModal('contact'); setActiveNav(this);">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Contact
+            </button>
+        </nav>
+    </header>
+
+    <div class="page">
         <div class="policy-card">
-            <div class="accent-bar"></div>
             <h1>Privacy Policy</h1>
             <p>Thank you for visiting the Randomizer portfolio. Protecting your privacy is important, and this page explains how information is handled when you view or interact with the site.</p>
             <h2>Information Collection</h2>
@@ -29,5 +53,19 @@
             <p>This privacy policy may be updated over time. If changes occur, the modified version will be reflected on this page.</p>
         </div>
     </div>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact')">&times;</span>
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/site.js"></script>
 </body>
 </html>

@@ -39,13 +39,22 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    padding-top: 120px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-xl) 0;
+    padding: 24px var(--spacing-lg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(15, 15, 15, 0.92);
+    backdrop-filter: blur(12px);
+    max-width: 100%;
 }
 
 .logo {
@@ -55,33 +64,47 @@ header {
 
 .nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
+    gap: 12px;
+    align-items: center;
 }
 
 .nav-btn,
 .nav-link {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 8px 12px;
     color: var(--text-primary);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     text-decoration: none;
-    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-    backdrop-filter: blur(12px);
+    transition: color 0.25s ease, border-color 0.25s ease;
+    position: relative;
+}
+
+.nav-btn .icon,
+.nav-link .icon {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
 }
 
 .nav-btn:hover,
 .nav-link:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.16);
+    color: var(--accent-start);
+}
+
+.nav-btn.active,
+.nav-link.active {
+    border-bottom-color: #6ee7b7;
+    color: var(--accent-start);
 }
 
 .main {
@@ -102,10 +125,7 @@ header {
     font-size: clamp(3rem, 4vw, 4.5rem);
     line-height: 0.95;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f3e9d9;
 }
 
 .app-description {
@@ -116,7 +136,7 @@ header {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    background: #f3e9d9;
     color: #081010;
     border: none;
     border-radius: 999px;
@@ -260,32 +280,46 @@ header {
 .page {
     max-width: 960px;
     margin: 0 auto;
-    padding: 40px 24px 80px;
+    padding: 120px 24px 80px;
 }
 
 @media (max-width: 860px) {
     .container {
         padding: 0 18px;
+        padding-top: 100px;
     }
 
     header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-        padding: 28px 0 24px;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
     }
 
     .nav {
         width: 100%;
-        gap: 12px;
+        gap: 8px;
+        justify-content: center;
     }
 
     .nav-btn,
     .nav-link {
-        width: 100%;
+        padding: 6px 10px;
+        font-size: 12px;
+        flex: 1;
+        max-width: 100px;
         justify-content: center;
-        padding: 10px 14px;
-        font-size: 13px;
+    }
+
+    .nav-btn .icon,
+    .nav-link .icon {
+        width: 14px;
+        height: 14px;
     }
 
     .main {
@@ -340,6 +374,14 @@ header {
     .close {
         top: 14px;
         right: 14px;
+    }
+
+    .page {
+        padding: 100px 18px 60px;
+    }
+
+    .policy-card {
+        padding: 24px;
     }
 }
 
